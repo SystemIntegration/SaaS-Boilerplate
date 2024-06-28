@@ -52,3 +52,5 @@ local
 
 # Sentry Config File
 .sentryclirc
+.vscode
+package-lock.json

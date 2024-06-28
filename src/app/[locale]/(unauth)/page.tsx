@@ -1,18 +1,11 @@
 import { getTranslations } from 'next-intl/server';
 
-import { CTA } from '@/templates/CTA';
-import { FAQ } from '@/templates/FAQ';
-import { Features } from '@/templates/Features';
-import { Footer } from '@/templates/Footer';
-import { Hero } from '@/templates/Hero';
-import { Navbar } from '@/templates/Navbar';
-import { Pricing } from '@/templates/Pricing';
-import { Sponsors } from '@/templates/Sponsors';
+import HomePage from '@/components/HomePage';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
     locale: props.params.locale,
-    namespace: 'Index',
+    namespace: 'web-dev',
   });
 
   return {
@@ -21,17 +14,6 @@ export async function generateMetadata(props: { params: { locale: string } }) {
   };
 }
 
-export default function IndexPage() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <Sponsors />
-      <Features />
-      <Pricing />
-      <FAQ />
-      <CTA />
-      <Footer />
-    </>
-  );
+export default function HomePagePage() {
+  return <HomePage />;
 }
